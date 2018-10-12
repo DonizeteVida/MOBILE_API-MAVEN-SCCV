@@ -203,7 +203,7 @@ public class CurriculoDao {
 			c.getStatus().setId(rs.getInt("id_status"));
 			c.getStatus().setNome(rs.getString("nomeStatus"));
 			c.getCategoria().setId(rs.getInt("id_categoria"));
-			c.getCategoria().setNome("nomeCategoria");
+			c.getCategoria().setNome(rs.getString("nomeCategoria"));
 
 			lista.add(c);
 		}
@@ -213,9 +213,11 @@ public class CurriculoDao {
 	}
 
 	public List<CurriculumVitae> listarCurriculo(Integer id_usuario, Integer id_curso) throws SQLException {
-		String sql = "SELECT c.*, cur.nome AS nomeCurso, tur.nome AS nomeTurma, sts.nome AS nomeStatus FROM curriculum_vitae AS c "
+		String sql = "SELECT c.*, cur.nome AS nomeCurso, tur.nome AS nomeTurma, sts.nome AS nomeStatus, cat.nome AS nomeCategoria FROM curriculum_vitae AS c "
 				+ "INNER JOIN curso AS cur ON cur.id = c.id_curso " + "INNER JOIN turma AS tur ON tur.id = c.id_turma "
-				+ "INNER JOIN status_ AS sts ON sts.id = c.id_status " + "WHERE c.id_usuario = ? AND c.id_curso = ?;";
+				+ "INNER JOIN status_ AS sts ON sts.id = c.id_status "
+				+ "INNER JOIN categoria AS cat ON cat.id = c.id_categoria "
+				+ "WHERE c.id_usuario = ? AND c.id_curso = ?;";
 
 		PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -237,6 +239,8 @@ public class CurriculoDao {
 			c.getUsuario().setId(rs.getInt("id_usuario"));
 			c.getStatus().setId(rs.getInt("id_status"));
 			c.getStatus().setNome(rs.getString("nomeStatus"));
+			c.getCategoria().setId(rs.getInt("id_categoria"));
+			c.getCategoria().setNome(rs.getString("nomeCategoria"));
 
 			lista.add(c);
 		}
