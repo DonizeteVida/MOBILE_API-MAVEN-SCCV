@@ -62,7 +62,7 @@ public class CurriculumVitaeService {
 	}
 
 	@GET
-	@PathParam("/{idCurriculo}/formacao/busca")
+	@Path("/{idCurriculo}/formacao/busca")
 	public List<Formacao> listaFormacao(@PathParam("idCurriculo") Integer idCurriculo) {
 		CurriculumVitae c = new CurriculumVitae();
 
