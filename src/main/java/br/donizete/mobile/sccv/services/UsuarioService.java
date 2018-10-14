@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -38,6 +39,19 @@ public class UsuarioService {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@POST
+	@Path("/update")
+	public boolean update(Usuario usuario) {
+		try {
+			return usuarioDao.updateUsuario(usuario);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 }

@@ -1,6 +1,5 @@
 package br.donizete.mobile.sccv.entities;
 
-import java.util.Calendar;
 
 import br.donizete.mobile.sccv.subentities.ClasseGenerica;
 
@@ -15,14 +14,13 @@ public class Usuario {
 		categoria = new ClasseGenerica();
 		sexo = new ClasseGenerica();
 		peso = new Integer(0);
-		idade = Calendar.getInstance();
 	}
 
 	private Integer id;
 	private String nome;
 	private String email;
 	private String senha;
-	private Calendar idade;
+	private Long idade;
 	private String cpf;
 	private String rg;
 	private Integer peso;
@@ -116,11 +114,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Calendar getIdade() {
+	public Long getIdade() {
 		return idade;
 	}
 
-	public void setIdade(Calendar idade) {
+	public void setIdade(Long idade) {
 		this.idade = idade;
 	}
 

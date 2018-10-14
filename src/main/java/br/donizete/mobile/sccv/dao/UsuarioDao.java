@@ -28,7 +28,7 @@ public class UsuarioDao {
 		ps.setString(1, u.getNome());
 		ps.setString(2, u.getEmail());
 		ps.setString(3, StringToMD5.convertStringToMd5(u.getSenha()));
-		ps.setLong(4, u.getIdade().getTimeInMillis());
+		ps.setLong(4, u.getIdade());
 		ps.setString(5, FormatarCPFouRGtoString.format(u.getCpf()));
 		ps.setString(6, FormatarCPFouRGtoString.format(u.getRg()));
 		ps.setInt(7, u.getCurso().getId());
@@ -54,7 +54,7 @@ public class UsuarioDao {
 		ps.setString(1, u.getNome());
 		ps.setString(2, u.getEmail());
 		ps.setString(3, StringToMD5.convertStringToMd5(u.getSenha()));
-		ps.setLong(4, u.getIdade().getTimeInMillis());
+		ps.setLong(4, u.getIdade());
 		ps.setString(5, FormatarCPFouRGtoString.format(u.getCpf()));
 		ps.setString(6, FormatarCPFouRGtoString.format(u.getRg()));
 		ps.setInt(7, u.getCurso().getId());
@@ -90,7 +90,7 @@ public class UsuarioDao {
 			u.setNome(rs.getString("nome"));
 			u.setEmail(rs.getString("email"));
 			u.setSenha(rs.getString("senha"));
-			u.getIdade().setTimeInMillis(rs.getLong("idade"));
+			u.setIdade(rs.getLong("idade"));
 			u.setCpf(rs.getString("cpf"));
 			u.setRg(rs.getString("rg"));
 			u.getStatus().setId(rs.getInt("id_status"));
@@ -137,7 +137,7 @@ public class UsuarioDao {
 			u.setNome(rs.getString("nome"));
 			u.setEmail(rs.getString("email"));
 			u.setSenha(rs.getString("senha"));
-			u.getIdade().setTimeInMillis(rs.getLong("idade"));
+			u.setIdade(rs.getLong("idade"));
 			u.setCpf(rs.getString("cpf"));
 			u.setRg(rs.getString("rg"));
 			u.getStatus().setId(rs.getInt("id_status"));
@@ -181,7 +181,7 @@ public class UsuarioDao {
 			u.setNome(rs.getString("nome"));
 			u.setEmail(rs.getString("email"));
 			u.setSenha(rs.getString("senha"));
-			u.getIdade().setTimeInMillis(rs.getLong("idade"));
+			u.setIdade(rs.getLong("idade"));
 			u.setCpf(rs.getString("cpf"));
 			u.setRg(rs.getString("rg"));
 			u.setPeso(rs.getInt("peso"));
@@ -236,7 +236,7 @@ public class UsuarioDao {
 			u.setNome(rs.getString("nome"));
 			u.setEmail(rs.getString("email"));
 			u.setSenha(rs.getString("senha"));
-			u.getIdade().setTimeInMillis(rs.getLong("idade"));
+			u.setIdade(rs.getLong("idade"));
 			u.setCpf(rs.getString("cpf"));
 			u.setRg(rs.getString("rg"));
 			u.setPeso(rs.getInt("peso"));
@@ -285,7 +285,7 @@ public class UsuarioDao {
 			u.setNome(rs.getString("nome"));
 			u.setEmail(rs.getString("email"));
 			u.setSenha(rs.getString("senha"));
-			u.getIdade().setTimeInMillis(rs.getLong("idade"));
+			u.setIdade(rs.getLong("idade"));
 			u.setCpf(rs.getString("cpf"));
 			u.setRg(rs.getString("rg"));
 			u.setPeso(rs.getInt("peso"));
