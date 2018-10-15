@@ -1,7 +1,5 @@
 package br.donizete.mobile.sccv.entities;
 
-import java.util.Calendar;
-
 import br.donizete.mobile.sccv.subentities.ClasseGenerica;
 
 public class CurriculumVitae {
@@ -13,12 +11,11 @@ public class CurriculumVitae {
 		categoria = new ClasseGenerica();
 		usuario = new Usuario();
 		semestre = new Integer(1);
-		data_criacao = Calendar.getInstance();
 	}
 
 	private Integer semestre;
 	private Integer id;
-	private Calendar data_criacao;
+	private Long data_criacao;
 	private ClasseGenerica curso;
 	private ClasseGenerica turma;
 	private ClasseGenerica status;
@@ -33,11 +30,11 @@ public class CurriculumVitae {
 		this.id = id;
 	}
 
-	public Calendar getData_criacao() {
+	public Long getData_criacao() {
 		return data_criacao;
 	}
 
-	public void setData_criacao(Calendar data_criacao) {
+	public void setData_criacao(Long data_criacao) {
 		this.data_criacao = data_criacao;
 	}
 

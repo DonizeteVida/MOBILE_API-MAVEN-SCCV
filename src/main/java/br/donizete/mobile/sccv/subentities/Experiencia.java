@@ -1,15 +1,11 @@
 package br.donizete.mobile.sccv.subentities;
 
-import java.util.Calendar;
-
 public class Experiencia {
 
 	public Experiencia() {
-		data_fim = Calendar.getInstance();
-		data_inicio = Calendar.getInstance();
 	}
 
-	public Experiencia(Integer id, String nome, Calendar data_inicio, Calendar data_fim, String cargo, String empresa,
+	public Experiencia(Integer id, String nome, Long data_inicio, Long data_fim, String cargo, String empresa,
 			String funcoes, Integer id_curriculum_vitae) {
 		this.id = id;
 		this.nome = nome;
@@ -23,8 +19,8 @@ public class Experiencia {
 
 	private Integer id;
 	private String nome;
-	private Calendar data_inicio;
-	private Calendar data_fim;
+	private Long data_inicio;
+	private Long data_fim;
 	private String cargo;
 	private String empresa;
 	private String funcoes;
@@ -54,19 +50,19 @@ public class Experiencia {
 		this.nome = nome;
 	}
 
-	public Calendar getData_inicio() {
+	public Long getData_inicio() {
 		return data_inicio;
 	}
 
-	public void setData_inicio(Calendar data_inicio) {
+	public void setData_inicio(Long data_inicio) {
 		this.data_inicio = data_inicio;
 	}
 
-	public Calendar getData_fim() {
+	public Long getData_fim() {
 		return data_fim;
 	}
 
-	public void setData_fim(Calendar data_fim) {
+	public void setData_fim(Long data_fim) {
 		this.data_fim = data_fim;
 	}
 

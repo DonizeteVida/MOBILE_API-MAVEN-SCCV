@@ -49,8 +49,8 @@ public class CurriculoDao {
 
 			f.setId(rs.getInt("id"));
 			f.setNome(rs.getString("nome"));
-			f.getData_inicio().setTimeInMillis(rs.getLong("data_inicio"));
-			f.getData_fim().setTimeInMillis(rs.getLong("data_fim"));
+			f.setData_inicio(rs.getLong("data_inicio"));
+			f.setData_fim(rs.getLong("data_fim"));
 			f.setEscola(rs.getString("escola"));
 			f.setId_curriculum_vitae(rs.getInt("id_curriculum_vitae"));
 
@@ -67,8 +67,8 @@ public class CurriculoDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 
 		ps.setString(1, formacao.getNome());
-		ps.setLong(2, formacao.getData_inicio().getTimeInMillis());
-		ps.setLong(3, formacao.getData_fim().getTimeInMillis());
+		ps.setLong(2, formacao.getData_inicio());
+		ps.setLong(3, formacao.getData_fim());
 		ps.setString(4, formacao.getEscola());
 		ps.setInt(5, formacao.getId());
 
@@ -81,8 +81,8 @@ public class CurriculoDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 
 		ps.setString(1, formacao.getNome());
-		ps.setLong(2, formacao.getData_inicio().getTimeInMillis());
-		ps.setLong(3, formacao.getData_fim().getTimeInMillis());
+		ps.setLong(2, formacao.getData_inicio());
+		ps.setLong(3, formacao.getData_fim());
 		ps.setString(4, formacao.getEscola());
 		ps.setInt(5, curriculumVitae.getId());
 
@@ -115,8 +115,8 @@ public class CurriculoDao {
 			Experiencia exp = new Experiencia();
 			exp.setId(rs.getInt("id"));
 			exp.setNome(rs.getString("nome"));
-			exp.getData_inicio().setTimeInMillis(rs.getLong("data_inicio"));
-			exp.getData_fim().setTimeInMillis(rs.getLong("data_fim"));
+			exp.setData_inicio(rs.getLong("data_inicio"));
+			exp.setData_fim(rs.getLong("data_fim"));
 			exp.setCargo(rs.getString("cargo"));
 			exp.setEmpresa(rs.getString("empresa"));
 			exp.setFuncoes(rs.getString("funcoes"));
@@ -134,8 +134,8 @@ public class CurriculoDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 
 		ps.setString(1, experiencia.getNome());
-		ps.setLong(2, experiencia.getData_inicio().getTimeInMillis());
-		ps.setLong(3, experiencia.getData_fim().getTimeInMillis());
+		ps.setLong(2, experiencia.getData_inicio());
+		ps.setLong(3, experiencia.getData_fim());
 		ps.setString(4, experiencia.getCargo());
 		ps.setString(5, experiencia.getEmpresa());
 		ps.setString(6, experiencia.getFuncoes());
@@ -150,8 +150,8 @@ public class CurriculoDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 
 		ps.setString(1, experiencia.getNome());
-		ps.setLong(2, experiencia.getData_inicio().getTimeInMillis());
-		ps.setLong(3, experiencia.getData_fim().getTimeInMillis());
+		ps.setLong(2, experiencia.getData_inicio());
+		ps.setLong(3, experiencia.getData_fim());
 		ps.setString(4, experiencia.getCargo());
 		ps.setString(5, experiencia.getEmpresa());
 		ps.setString(6, experiencia.getFuncoes());
@@ -193,7 +193,7 @@ public class CurriculoDao {
 			CurriculumVitae c = new CurriculumVitae();
 
 			c.setId(rs.getInt("id"));
-			c.getData_criacao().setTimeInMillis(rs.getLong("data_criacao"));
+			c.setData_criacao(rs.getLong("data_criacao"));
 			c.getCurso().setId(rs.getInt("id_curso"));
 			c.getCurso().setNome(rs.getString("nomeCurso"));
 			c.getTurma().setId(rs.getInt("id_turma"));
@@ -230,7 +230,7 @@ public class CurriculoDao {
 			CurriculumVitae c = new CurriculumVitae();
 
 			c.setId(rs.getInt("id"));
-			c.getData_criacao().setTimeInMillis(rs.getLong("data_criacao"));
+			c.setData_criacao(rs.getLong("data_criacao"));
 			c.getCurso().setId(rs.getInt("id_curso"));
 			c.getCurso().setNome(rs.getString("nomeCurso"));
 			c.getTurma().setId(rs.getInt("id_turma"));
